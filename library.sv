@@ -217,6 +217,109 @@ module offset_check
     (input logic val, low, delta,
     output logic is_between);
 
-    
+   assign  is_between = (val>=low) && (val <=(low + delta));
 
 endmodule: offset_check
+
+module offset_check
+      (output logic val, low, delta,
+      input logic is_between);
+      
+    initial begin
+      $monitor($time, 
+              "val = %d, low = %d, delta = %d, is_between = %b",
+              val, low, delta, is_between);
+      low = 1;
+      delta = 3;
+      val = 2;
+      #20 val = 1;
+      #20 val = 4;
+      #20 val = 0;
+      #20 val = 7;
+      #20 low = 4;
+      delta = 5;
+      val = 4;
+      #20 = 9;
+      #20 = 7;
+      #20 = 10;
+      #20 = 2;
+
+endmodule: offset_check_test
+
+
+module range_check_test
+      (output logic val, low, high,
+      input logic is_between);
+
+      initial begin
+          $monitor($time, 
+                  "val = %d, low = %d, high = %d, is_between = %b",
+                  val, low, high, is_between);
+          low = 1;
+          high = 10;
+          val = 5;
+          #20 val = 10;
+          #20 val = 15;
+          #20 val = 0;
+          #20 val = 1;
+          #20 low = 5;
+          high = 9;
+          val = 5;
+          #20 val = 9;
+          #20 val = 2;
+          #20 val = 7;
+          #20 val = 10;
+      end
+
+endmodule: range_check_test
+
+
+
+
+module Counter
+#(parameter WIDTH=8)
+(input logic clock, reset,
+ input logic [WIDTH-1:0] maxValue,
+ output logic [WIDTH-1:0] value);
+ 
+always_ff @(posedge clock, posedge reset)
+  if (reset || value == maxValue)
+    value <= 0;
+  else
+    value <= value + 1;
+    
+endmodule: Counter
+
+module Counter_test;
+logic clock, reset;
+logic [7:0] maxValue;
+logic [7:0] value;
+
+Counter #(8) c(.*);
+
+initial begin
+  $monitor ($stime,, "maxValue = %d value = %d", maxValue, value);
+  
+  clock = 0;
+  maxValue =  5;
+  reset = 1;
+  reset <= 0;
+  forever #5 clock = ~clock;
+end
+
+initial begin
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  @ (posedge clock);
+  $finish;
+end
+
+endmodule: Counter_test
