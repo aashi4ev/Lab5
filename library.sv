@@ -221,16 +221,58 @@ module offset_check
 
 endmodule: offset_check
 
-module range_check_test;
+module offset_check
+      (output logic val, low, delta,
+      input logic is_between);
+      
+    initial begin
+      $monitor($time, 
+              "val = %d, low = %d, delta = %d, is_between = %b",
+              val, low, delta, is_between);
+      low = 1;
+      delta = 3;
+      val = 2;
+      #20 val = 1;
+      #20 val = 4;
+      #20 val = 0;
+      #20 val = 7;
+      #20 low = 4;
+      delta = 5;
+      val = 4;
+      #20 = 9;
+      #20 = 7;
+      #20 = 10;
+      #20 = 2;
 
-      logic val, low, high, is_between;
+endmodule: offset_check_test
+
+
+module range_check_test
+      (output logic val, low, high,
+      input logic is_between);
 
       initial begin
-          $monitor();
-
+          $monitor($time, 
+                  "val = %d, low = %d, high = %d, is_between = %b",
+                  val, low, high, is_between);
+          low = 1;
+          high = 10;
+          val = 5;
+          #20 val = 10;
+          #20 val = 15;
+          #20 val = 0;
+          #20 val = 1;
+          #20 low = 5;
+          high = 9;
+          val = 5;
+          #20 val = 9;
+          #20 val = 2;
+          #20 val = 7;
+          #20 val = 10;
       end
 
 endmodule: range_check_test
+
 
 
 
