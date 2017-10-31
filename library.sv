@@ -201,7 +201,8 @@ endmodule : Register_test
 
 
 module range_check
-    (input logic val, low, high, 
+    #(parameter WIDTH = 8)
+    (input logic [WIDTH-1] val, low, high, 
     output logic is_between);
     
     logic a, b;
@@ -214,7 +215,8 @@ module range_check
 endmodule: range_check
 
 module offset_check
-    (input logic val, low, delta,
+    #(paramter WIDTH = 8)
+    (input logic [WIDTH-1] val, low, delta,
     output logic is_between);
 
    assign  is_between = (val>=low) && (val <=(low + delta));
