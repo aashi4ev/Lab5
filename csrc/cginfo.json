@@ -1,0 +1,146 @@
+{
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 94884
+    },
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "std": {
+            "reYIK_d": {
+                "archive": "archive.1/_30580_archive_1.a",
+                "bytes": 29004,
+                "mod": "std",
+                "out": "reYIK_d.o",
+                "mode": 4
+            }
+        },
+        "Counter_test": {
+            "kQfM4_d": {
+                "archive": "archive.1/_30580_archive_1.a",
+                "bytes": 15949,
+                "mod": "Counter_test",
+                "out": "kQfM4_d.o",
+                "mode": 4
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "archive": "archive.1/_30580_archive_1.a",
+                "bytes": 7336,
+                "mod": "...MASTER...",
+                "out": "amcQw_d.o",
+                "mode": 4
+            }
+        }
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "NameTable": {
+        "vga_test": [
+            "vga_test",
+            "yrmkC",
+            "module"
+        ],
+        "MagComp_test": [
+            "MagComp_test",
+            "GA5BT",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "Counter_test": [
+            "Counter_test",
+            "kQfM4",
+            "module"
+        ],
+        "Adder_test": [
+            "Adder_test",
+            "PeTq0",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "offset_check_test": [
+            "offset_check_test",
+            "fTMc1",
+            "module"
+        ],
+        "Multiplexer_test": [
+            "Multiplexer_test",
+            "waMi7",
+            "module"
+        ],
+        "Mux2to1_test": [
+            "Mux2to1_test",
+            "PMNR0",
+            "module"
+        ],
+        "Decoder_test": [
+            "Decoder_test",
+            "ShHyF",
+            "module"
+        ],
+        "Register_test": [
+            "Register_test",
+            "SSQnw",
+            "module"
+        ],
+        "range_check_test": [
+            "range_check_test",
+            "gJ4Lw",
+            "module"
+        ],
+        "range_check": [
+            "range_check",
+            "aW6JW",
+            "module"
+        ],
+        "offset_check": [
+            "offset_check",
+            "SZ5kb",
+            "module"
+        ]
+    },
+    "PEModules": [],
+    "CompileStrategy": "fullobj",
+    "CompileStatus": "Successful",
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "vga_test",
+        "MagComp_test",
+        "Adder_test",
+        "Multiplexer_test",
+        "Mux2to1_test",
+        "Decoder_test",
+        "Register_test",
+        "range_check",
+        "offset_check",
+        "offset_check_test",
+        "range_check_test",
+        "Counter_test"
+    ],
+    "CurCompileUdps": {},
+    "CompileProcesses": [
+        "cgproc.30580.json"
+    ],
+    "Misc": {
+        "daidir_abs": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5/simv.daidir",
+        "csrc": "csrc",
+        "cwd": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5/csrc",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.1"
+    },
+    "stat": {
+        "nMops": 4726
+    }
+}

@@ -223,7 +223,7 @@ module offset_check
 
 endmodule: offset_check
 
-module offset_check
+module offset_check_test
       (output logic val, low, delta,
       input logic is_between);
       
@@ -241,10 +241,11 @@ module offset_check
       #20 low = 4;
       delta = 5;
       val = 4;
-      #20 = 9;
-      #20 = 7;
-      #20 = 10;
-      #20 = 2;
+      #20 val = 9;
+      #20 val = 7;
+      #20 val = 10;
+      #20 val = 2;
+	end
 
 endmodule: offset_check_test
 

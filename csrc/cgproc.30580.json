@@ -1,0 +1,221 @@
+{
+    "Modules": {
+        "offset_check_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "...MASTER...": {},
+        "Multiplexer_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "vga_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "MagComp_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "Counter_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "Adder_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "Mux2to1_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "Register_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "Decoder_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "range_check_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "range_check": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "offset_check": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "amcQw_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 9502,
+            "mode": 4
+        },
+        "ShHyF_d": {
+            "mod": "Decoder_test",
+            "out": "ShHyF_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 13000,
+            "mode": 4
+        },
+        "reYIK_d": {
+            "mod": "std",
+            "out": "reYIK_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 34314,
+            "mode": 4
+        },
+        "GA5BT_d": {
+            "mod": "MagComp_test",
+            "out": "GA5BT_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 13902,
+            "mode": 4
+        },
+        "SZ5kb_d": {
+            "mod": "offset_check",
+            "out": "SZ5kb_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 7160,
+            "mode": 4
+        },
+        "yrmkC_d": {
+            "mod": "vga_test",
+            "out": "yrmkC_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 20094,
+            "mode": 4
+        },
+        "PeTq0_d": {
+            "mod": "Adder_test",
+            "out": "PeTq0_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 14697,
+            "mode": 4
+        },
+        "waMi7_d": {
+            "mod": "Multiplexer_test",
+            "out": "waMi7_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 11710,
+            "mode": 4
+        },
+        "PMNR0_d": {
+            "mod": "Mux2to1_test",
+            "out": "PMNR0_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 13315,
+            "mode": 4
+        },
+        "SSQnw_d": {
+            "mod": "Register_test",
+            "out": "SSQnw_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 14445,
+            "mode": 4
+        },
+        "aW6JW_d": {
+            "mod": "range_check",
+            "out": "aW6JW_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 7674,
+            "mode": 4
+        },
+        "fTMc1_d": {
+            "mod": "offset_check_test",
+            "out": "fTMc1_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 11750,
+            "mode": 4
+        },
+        "gJ4Lw_d": {
+            "mod": "range_check_test",
+            "out": "gJ4Lw_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 11749,
+            "mode": 4
+        },
+        "kQfM4_d": {
+            "mod": "Counter_test",
+            "out": "kQfM4_d.o",
+            "archive": "archive.1/_30580_archive_1.a",
+            "bytes": 18898,
+            "mode": 4
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.1/_30580_archive_1.a",
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    9502
+                ],
+                [
+                    "reYIK_d.o",
+                    34314
+                ],
+                [
+                    "yrmkC_d.o",
+                    20094
+                ],
+                [
+                    "GA5BT_d.o",
+                    13902
+                ],
+                [
+                    "PeTq0_d.o",
+                    14697
+                ],
+                [
+                    "waMi7_d.o",
+                    11710
+                ],
+                [
+                    "PMNR0_d.o",
+                    13315
+                ],
+                [
+                    "ShHyF_d.o",
+                    13000
+                ],
+                [
+                    "SSQnw_d.o",
+                    14445
+                ],
+                [
+                    "aW6JW_d.o",
+                    7674
+                ],
+                [
+                    "SZ5kb_d.o",
+                    7160
+                ],
+                [
+                    "fTMc1_d.o",
+                    11750
+                ],
+                [
+                    "gJ4Lw_d.o",
+                    11749
+                ],
+                [
+                    "kQfM4_d.o",
+                    18898
+                ]
+            ],
+            "size": 202210
+        }
+    ]
+}

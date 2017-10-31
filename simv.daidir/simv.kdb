@@ -1,0 +1,9 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5
+SystemC=FALSE
+UUM=FALSE
+KDB=FALSE
+USE_NOVAS_HOME=FALSE
+TOP=vga_test MagComp_test Adder_test Multiplexer_test Mux2to1_test Decoder_test Register_test range_check offset_check offset_check_test range_check_test Counter_test 
