@@ -215,7 +215,7 @@ module range_check
 endmodule: range_check
 
 module offset_check
-    #(paramter WIDTH = 8)
+    #(parameter WIDTH = 8)
     (input logic [WIDTH-1] val, low, delta,
     output logic is_between);
 
@@ -224,7 +224,8 @@ module offset_check
 endmodule: offset_check
 
 module offset_check_test
-      (output logic val, low, delta,
+      #(parameter WIDTH = 8);
+      (output logic [WIDTH-1]val, low, delta,
       input logic is_between);
       
     initial begin
@@ -251,7 +252,8 @@ endmodule: offset_check_test
 
 
 module range_check_test
-      (output logic val, low, high,
+      #(parameter WIDTH=8)
+      (output logic [WIDTH-1] val, low, high,
       input logic is_between);
 
       initial begin
