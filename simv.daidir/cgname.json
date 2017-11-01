@@ -1,72 +1,17 @@
 {
-    "vga_test": [
-        "vga_test",
-        "yrmkC",
-        "module"
-    ],
-    "MagComp_test": [
-        "MagComp_test",
-        "GA5BT",
-        "module"
-    ],
     "std": [
         "std",
         "reYIK",
         "module"
     ],
-    "Counter_test": [
-        "Counter_test",
-        "kQfM4",
-        "module"
-    ],
-    "Adder_test": [
-        "Adder_test",
-        "PeTq0",
+    "vga_test": [
+        "vga_test",
+        "yrmkC",
         "module"
     ],
     "...MASTER...": [
         "SIM",
         "amcQw",
-        "module"
-    ],
-    "offset_check_test": [
-        "offset_check_test",
-        "fTMc1",
-        "module"
-    ],
-    "Multiplexer_test": [
-        "Multiplexer_test",
-        "waMi7",
-        "module"
-    ],
-    "Mux2to1_test": [
-        "Mux2to1_test",
-        "PMNR0",
-        "module"
-    ],
-    "Decoder_test": [
-        "Decoder_test",
-        "ShHyF",
-        "module"
-    ],
-    "Register_test": [
-        "Register_test",
-        "SSQnw",
-        "module"
-    ],
-    "range_check_test": [
-        "range_check_test",
-        "gJ4Lw",
-        "module"
-    ],
-    "range_check": [
-        "range_check",
-        "aW6JW",
-        "module"
-    ],
-    "offset_check": [
-        "offset_check",
-        "SZ5kb",
         "module"
     ]
 }

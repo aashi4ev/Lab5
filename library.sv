@@ -135,8 +135,9 @@ module Decoder
       D = 1'b1 << I;
   end
   
-endmodule : Decoder
+endmodule: Decoder
 
+/*
 module Decoder_test;
 
   logic [2:0] I;
@@ -157,6 +158,7 @@ module Decoder_test;
   end
   
 endmodule : Decoder_test
+*/
 
 module Register
   #(parameter WIDTH=8)
@@ -172,6 +174,7 @@ module Register
       
 endmodule : Register
 
+/*
 module Register_test;
 
   logic [7:0] D;
@@ -197,12 +200,12 @@ module Register_test;
   end
   
 endmodule : Register_test
-
+*/
 
 
 module range_check
     #(parameter WIDTH = 8)
-    (input logic [WIDTH-1] val, low, high, 
+    (input logic [WIDTH-1:0] val, low, high, 
     output logic is_between);
     
     logic a, b;
@@ -215,14 +218,15 @@ module range_check
 endmodule: range_check
 
 module offset_check
-    #(paramter WIDTH = 8)
-    (input logic [WIDTH-1] val, low, delta,
+    #(parameter WIDTH = 8)
+    (input logic [WIDTH-1:0] val, low, delta,
     output logic is_between);
 
    assign  is_between = (val>=low) && (val <=(low + delta));
 
 endmodule: offset_check
 
+/*
 module offset_check_test
       (output logic val, low, delta,
       input logic is_between);
@@ -276,7 +280,7 @@ module range_check_test
 
 endmodule: range_check_test
 
-
+*/
 
 
 module Counter
@@ -285,14 +289,20 @@ module Counter
  input logic [WIDTH-1:0] maxValue,
  output logic [WIDTH-1:0] value);
  
+ logic max;
+ assign max = (value == maxValue);
 always_ff @(posedge clock, posedge reset)
-  if (reset || value == maxValue)
+
+  if (reset)
     value <= 0;
+  else if(max)
+	 value <= 0;
   else
     value <= value + 1;
     
 endmodule: Counter
 
+/*
 module Counter_test;
 logic clock, reset;
 logic [7:0] maxValue;
@@ -324,5 +334,6 @@ initial begin
   @ (posedge clock);
   $finish;
 end
-
 endmodule: Counter_test
+
+*/

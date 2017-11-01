@@ -1,0 +1,17 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= -sverilog -full64
+
+all :		_VCSgd_gUMmhd_1.db \
+	_VCSgd_9Lhfed_1.db \
+
+
+
+_VCSgd_gUMmhd_1.db :	part2.sv 
+		${VLOGAN}  ${VLOGAN_OPT} part2.sv
+
+
+_VCSgd_9Lhfed_1.db :	library.sv 
+		${VLOGAN}  ${VLOGAN_OPT} library.sv
+
+

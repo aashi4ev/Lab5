@@ -1,0 +1,42 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {},
+        "vga_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "out": "amcQw_d.o",
+            "bytes": 7336,
+            "mode": 4,
+            "archive": "archive.30/_27911_archive_1.a"
+        },
+        "yrmkC_d": {
+            "mod": "vga_test",
+            "out": "yrmkC_d.o",
+            "bytes": 20768,
+            "mode": 4,
+            "archive": "archive.30/_27911_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.30/_27911_archive_1.a",
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    7336
+                ],
+                [
+                    "yrmkC_d.o",
+                    20768
+                ]
+            ],
+            "size": 28104
+        }
+    ]
+}
