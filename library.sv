@@ -219,11 +219,7 @@ endmodule: range_check
 
 module offset_check
     #(parameter WIDTH = 8)
-<<<<<<< HEAD
     (input logic [WIDTH-1:0] val, low, delta,
-=======
-    (input logic [WIDTH-1] val, low, delta,
->>>>>>> b9041cb76d83134c003b72e26a79d465c3b746de
     output logic is_between);
 
    assign  is_between = (val>=low) && (val <=(low + delta));
@@ -232,8 +228,7 @@ endmodule: offset_check
 
 /*
 module offset_check_test
-      #(parameter WIDTH = 8);
-      (output logic [WIDTH-1]val, low, delta,
+      (output logic val, low, delta,
       input logic is_between);
       
     initial begin
@@ -254,14 +249,13 @@ module offset_check_test
       #20 val = 7;
       #20 val = 10;
       #20 val = 2;
-	end
+  end
 
 endmodule: offset_check_test
 
 
 module range_check_test
-      #(parameter WIDTH=8)
-      (output logic [WIDTH-1] val, low, high,
+      (output logic val, low, high,
       input logic is_between);
 
       initial begin
@@ -302,7 +296,7 @@ always_ff @(posedge clock, posedge reset)
   if (reset)
     value <= 0;
   else if(max)
-	 value <= 0;
+   value <= 0;
   else
     value <= value + 1;
     
