@@ -3,40 +3,36 @@
     "PrevCompiledModules": {
         "vga_test": {
             "yrmkC_d": {
-                "archive": "archive.31/_28959_archive_1.a",
                 "mod": "vga_test",
-                "bytes": 20768,
+                "bytes": 41347,
                 "out": "yrmkC_d.o",
-                "mode": 4
+                "mode": 4,
+                "archive": "archive.57/_27981_archive_1.a"
             }
         },
         "std": {
             "reYIK_d": {
-                "archive": "archive.31/_prev_archive_1.a",
                 "mod": "std",
-                "bytes": 29004,
+                "bytes": 34314,
                 "mode": 4,
+                "archive": "archive.57/_prev_archive_1.a",
                 "out": "reYIK_d.o"
             }
         },
         "...MASTER...": {
             "amcQw_d": {
-                "archive": "archive.31/_28959_archive_1.a",
                 "mod": "...MASTER...",
                 "bytes": 7336,
                 "out": "amcQw_d.o",
-                "mode": 4
+                "mode": 4,
+                "archive": "archive.57/_27981_archive_1.a"
             }
         }
     },
-    "Misc": {
-        "cwd": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5",
-        "default_output_dir": "csrc",
-        "daidir": "simv.daidir",
-        "csrc": "csrc",
-        "csrc_abs": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5/csrc",
-        "daidir_abs": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5/simv.daidir",
-        "archive_dir": "archive.31"
+    "CompileStrategy": "fullobj",
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 95949
     },
     "NameTable": {
         "std": [
@@ -55,25 +51,29 @@
             "module"
         ]
     },
+    "PEModules": [],
+    "CurCompileUdps": {},
     "CurCompileModules": [
         "...MASTER...",
         "vga_test"
     ],
-    "CompileStrategy": "fullobj",
-    "CurCompileUdps": {},
-    "PEModules": [],
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 63384
-    },
-    "stat": {
-        "nMops": 1241
+    "Misc": {
+        "cwd": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5",
+        "archive_dir": "archive.57",
+        "csrc": "csrc",
+        "daidir_abs": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5/simv.daidir",
+        "csrc_abs": "/afs/ece.cmu.edu/usr/emaynard/Private/class/18-240/Lab5/Lab5/csrc",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc"
     },
     "LVLData": [
         "SIM"
     ],
+    "CompileStatus": "Successful",
     "CompileProcesses": [
-        "cgproc.28959.json"
+        "cgproc.27981.json"
     ],
-    "CompileStatus": "Successful"
+    "stat": {
+        "nMops": 2425
+    }
 }

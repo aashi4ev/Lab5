@@ -1,6 +1,6 @@
 |ChipInterface
 CLOCK_50 => CLOCK_50.IN1
-KEY[0] => KEY[0].IN1
+KEY[0] => _.IN1
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ChipInterface
-Wed Nov  1 12:58:43 2017
+Wed Nov  1 23:48:18 2017
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Full Version
 
 
@@ -59,13 +59,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov  1 12:58:43 2017     ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov  1 23:48:17 2017     ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Full Version ;
 ; Revision Name                      ; ChipInterface                             ;
 ; Top-level Entity Name              ; ChipInterface                             ;
 ; Family                             ; Cyclone IV E                              ;
-; Total logic elements               ; 83                                        ;
-;     Total combinational functions  ; 83                                        ;
+; Total logic elements               ; 90                                        ;
+;     Total combinational functions  ; 90                                        ;
 ;     Dedicated logic registers      ; 36                                        ;
 ; Total registers                    ; 36                                        ;
 ; Total pins                         ; 108                                       ;
@@ -195,16 +195,16 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 83    ;
+; Estimated Total logic elements              ; 90    ;
 ;                                             ;       ;
-; Total combinational functions               ; 83    ;
+; Total combinational functions               ; 90    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 34    ;
-;     -- 3 input functions                    ; 8     ;
-;     -- <=2 input functions                  ; 41    ;
+;     -- 4 input functions                    ; 43    ;
+;     -- 3 input functions                    ; 7     ;
+;     -- <=2 input functions                  ; 40    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 50    ;
+;     -- normal mode                          ; 57    ;
 ;     -- arithmetic mode                      ; 33    ;
 ;                                             ;       ;
 ; Total registers                             ; 36    ;
@@ -214,8 +214,8 @@ applicable agreement for further details.
 ; I/O pins                                    ; 108   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out                             ; 36    ;
-; Total fan-out                               ; 483   ;
-; Average fan-out                             ; 1.44  ;
+; Total fan-out                               ; 514   ;
+; Average fan-out                             ; 1.50  ;
 +---------------------------------------------+-------+
 
 
@@ -224,14 +224,14 @@ applicable agreement for further details.
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+--------------+
-; |ChipInterface             ; 83 (9)            ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 108  ; 0            ; |ChipInterface                       ;              ;
-;    |vga:v|                 ; 74 (6)            ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v                 ;              ;
+; |ChipInterface             ; 90 (12)           ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 108  ; 0            ; |ChipInterface                       ;              ;
+;    |vga:v|                 ; 78 (11)           ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v                 ;              ;
 ;       |Counter:count1|     ; 19 (19)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|Counter:count1  ;              ;
-;       |Counter:count2|     ; 19 (19)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|Counter:count2  ;              ;
-;       |Counter:count4|     ; 19 (19)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|Counter:count4  ;              ;
+;       |Counter:count2|     ; 20 (20)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|Counter:count2  ;              ;
+;       |Counter:count3|     ; 18 (18)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|Counter:count3  ;              ;
 ;       |range_check:rc1|    ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|range_check:rc1 ;              ;
-;       |range_check:rc2|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|range_check:rc2 ;              ;
-;       |range_check:rc4|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|range_check:rc4 ;              ;
+;       |range_check:rc2|    ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|range_check:rc2 ;              ;
+;       |range_check:rc3|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ChipInterface|vga:v|range_check:rc3 ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -256,7 +256,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ChipInterface|VGA_G       ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |ChipInterface|VGA_G       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -360,9 +360,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+------------------+
 ; low[11..9]  ; Input ; Info     ; Stuck at GND     ;
 ; low[7..6]   ; Input ; Info     ; Stuck at GND     ;
-; low[4..0]   ; Input ; Info     ; Stuck at GND     ;
+; low[4..1]   ; Input ; Info     ; Stuck at GND     ;
 ; low[8]      ; Input ; Info     ; Stuck at VCC     ;
 ; low[5]      ; Input ; Info     ; Stuck at VCC     ;
+; low[0]      ; Input ; Info     ; Stuck at VCC     ;
 ; high[10..9] ; Input ; Info     ; Stuck at VCC     ;
 ; high[4..0]  ; Input ; Info     ; Stuck at VCC     ;
 ; high[8..5]  ; Input ; Info     ; Stuck at GND     ;
@@ -372,19 +373,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +---------------------------------------------------+
 ; Port Connectivity Checks: "vga:v|range_check:rc2" ;
-+------------+-------+----------+-------------------+
-; Port       ; Type  ; Severity ; Details           ;
-+------------+-------+----------+-------------------+
-; low[11..2] ; Input ; Info     ; Stuck at GND      ;
-; low[1]     ; Input ; Info     ; Stuck at VCC      ;
-; low[0]     ; Input ; Info     ; Stuck at GND      ;
-; high[9..5] ; Input ; Info     ; Stuck at GND      ;
-; high[3..1] ; Input ; Info     ; Stuck at GND      ;
-; high[11]   ; Input ; Info     ; Stuck at GND      ;
-; high[10]   ; Input ; Info     ; Stuck at VCC      ;
-; high[4]    ; Input ; Info     ; Stuck at VCC      ;
-; high[0]    ; Input ; Info     ; Stuck at VCC      ;
-+------------+-------+----------+-------------------+
++--------------+-------+----------+-----------------+
+; Port         ; Type  ; Severity ; Details         ;
++--------------+-------+----------+-----------------+
+; low[11..2]   ; Input ; Info     ; Stuck at GND    ;
+; low[1]       ; Input ; Info     ; Stuck at VCC    ;
+; low[0]       ; Input ; Info     ; Stuck at GND    ;
+; high[11..10] ; Input ; Info     ; Stuck at GND    ;
+; high[8..4]   ; Input ; Info     ; Stuck at GND    ;
+; high[2..0]   ; Input ; Info     ; Stuck at GND    ;
+; high[9]      ; Input ; Info     ; Stuck at VCC    ;
+; high[3]      ; Input ; Info     ; Stuck at VCC    ;
++--------------+-------+----------+-----------------+
 
 
 +---------------------------------------------------+
@@ -429,18 +429,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------+
-; Port Connectivity Checks: "vga:v|Counter:count2" ;
-+----------------+-------+----------+--------------+
-; Port           ; Type  ; Severity ; Details      ;
-+----------------+-------+----------+--------------+
-; maxValue[9..5] ; Input ; Info     ; Stuck at GND ;
-; maxValue[3..1] ; Input ; Info     ; Stuck at GND ;
-; maxValue[11]   ; Input ; Info     ; Stuck at GND ;
-; maxValue[10]   ; Input ; Info     ; Stuck at VCC ;
-; maxValue[4]    ; Input ; Info     ; Stuck at VCC ;
-; maxValue[0]    ; Input ; Info     ; Stuck at VCC ;
-+----------------+-------+----------+--------------+
++----------------------------------------------------+
+; Port Connectivity Checks: "vga:v|Counter:count2"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; maxValue[11..10] ; Input ; Info     ; Stuck at GND ;
+; maxValue[8..4]   ; Input ; Info     ; Stuck at GND ;
+; maxValue[2..0]   ; Input ; Info     ; Stuck at GND ;
+; maxValue[9]      ; Input ; Info     ; Stuck at VCC ;
+; maxValue[3]      ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
 
 
 +---------------------------------------------------+
@@ -460,7 +459,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; col  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; row  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -479,8 +478,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Full Version
-    Info: Processing started: Wed Nov  1 12:58:42 2017
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c ChipInterface
+    Info: Processing started: Wed Nov  1 23:48:16 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Part2 -c ChipInterface
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 13 design units, including 13 entities, in source file library.sv
     Info (12023): Found entity 1: MagComp
@@ -496,22 +495,25 @@ Info (12021): Found 13 design units, including 13 entities, in source file libra
     Info (12023): Found entity 11: range_check
     Info (12023): Found entity 12: offset_check
     Info (12023): Found entity 13: Counter
-Info (12021): Found 2 design units, including 2 entities, in source file part2.sv
+Info (12021): Found 3 design units, including 3 entities, in source file part2.sv
     Info (12023): Found entity 1: vga
     Info (12023): Found entity 2: ChipInterface
+    Info (12023): Found entity 3: vga_test
 Info (12127): Elaborating entity "ChipInterface" for the top level hierarchy
-Warning (10034): Output port "HEX0" at part2.sv(43) has no driver
-Warning (10034): Output port "HEX1" at part2.sv(43) has no driver
-Warning (10034): Output port "HEX2" at part2.sv(43) has no driver
-Warning (10034): Output port "HEX3" at part2.sv(43) has no driver
-Warning (10034): Output port "HEX4" at part2.sv(44) has no driver
-Warning (10034): Output port "HEX5" at part2.sv(44) has no driver
-Warning (10034): Output port "HEX6" at part2.sv(44) has no driver
-Warning (10034): Output port "HEX7" at part2.sv(44) has no driver
+Warning (10034): Output port "HEX0" at part2.sv(44) has no driver
+Warning (10034): Output port "HEX1" at part2.sv(44) has no driver
+Warning (10034): Output port "HEX2" at part2.sv(44) has no driver
+Warning (10034): Output port "HEX3" at part2.sv(44) has no driver
+Warning (10034): Output port "HEX4" at part2.sv(45) has no driver
+Warning (10034): Output port "HEX5" at part2.sv(45) has no driver
+Warning (10034): Output port "HEX6" at part2.sv(45) has no driver
+Warning (10034): Output port "HEX7" at part2.sv(45) has no driver
 Info (12128): Elaborating entity "vga" for hierarchy "vga:v"
 Info (12128): Elaborating entity "Counter" for hierarchy "vga:v|Counter:count1"
 Warning (10230): Verilog HDL assignment warning at library.sv(301): truncated value with size 32 to match size of target (12)
 Info (12128): Elaborating entity "range_check" for hierarchy "vga:v|range_check:rc1"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer vga:v|range_check:rc3|is_between~synth
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at GND
@@ -596,14 +598,14 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[15]"
     Warning (15610): No output dependent on input pin "SW[16]"
     Warning (15610): No output dependent on input pin "SW[17]"
-Info (21057): Implemented 191 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 198 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 85 output pins
-    Info (21061): Implemented 83 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 90 warnings
-    Info: Peak virtual memory: 651 megabytes
-    Info: Processing ended: Wed Nov  1 12:58:43 2017
-    Info: Elapsed time: 00:00:01
+    Info (21061): Implemented 90 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 92 warnings
+    Info: Peak virtual memory: 647 megabytes
+    Info: Processing ended: Wed Nov  1 23:48:18 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

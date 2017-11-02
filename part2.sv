@@ -7,29 +7,37 @@ module vga
 	 output logic [9:0] col);
 	 
 	logic [11:0] horizontalCounter, verticalCounter;
-	logic hTrigger, rowIncrement, colIncrement;
+	logic hTrigger, hEndTrigger, rowIncrement, colIncrement;
 	logic HDisp, VDisp;
 	logic [10:0] doubleCol;
+	logic CountCols;
 
+	always_ff @(posedge CLOCK_50, posedge reset) begin
+		if(reset)
+			CountCols <= 0;
+		else
+			CountCols <= HDisp;
+	end
 	
-	assign hTrigger = (horizontalCounter == 1599);
+	assign hTrigger = (horizontalCounter == 0);
+	assign hEndTrigger = (horizontalCounter == 1599);
 	
-	assign rowIncrement = hTrigger & VDisp;
-	assign colIncrement = CLOCK_50 & HDisp;
+	assign rowIncrement = hEndTrigger & VDisp;
+	assign colIncrement = CLOCK_50 & HDisp & CountCols;
 	assign col = doubleCol[10:1];
 	
 	assign blank = ~(VDisp & HDisp);
 	
 	Counter #(12) count1(CLOCK_50, reset, 12'd1599, horizontalCounter),
-				  count2(hTrigger, reset, 12'd1041, verticalCounter),
+				  count2(hTrigger, reset, 12'd520, verticalCounter),
 				  count3(colIncrement, reset, 12'd1279, doubleCol),
 				  count4(rowIncrement, reset, 12'd479, row);
 				  
 				 
 	range_check #(12)  rc1(horizontalCounter, 12'd192, 12'd1599, HS),
-					           rc2(verticalCounter, 12'd2, 12'd1041, VS),
-					           rc3(horizontalCounter, 12'd289, 12'd1567, HDisp),
-					           rc4(verticalCounter, 12'd32, 12'd510, VDisp);
+					           rc2(verticalCounter, 12'd2, 12'd520, VS),
+					           rc3(horizontalCounter, 12'd289, 12'd1568, HDisp),
+					           rc4(verticalCounter, 12'd31, 12'd510, VDisp);
 					 
 
 	
@@ -54,7 +62,71 @@ module ChipInterface
     	VGA_R = 0;
     	VGA_G = 0;
     	VGA_B = 0;
-    	if(row < 60) begin
+		/*
+		if (col > 160 && col < 480) begin
+    		VGA_R = 8'hFF;
+    		VGA_G = 0;
+    		VGA_B = 0;
+		end
+		*/
+		
+    	if(col < 80) begin
+    		VGA_R = 0;
+    		VGA_G = 0;
+    		VGA_B = 0;
+    	end
+    	else if (col < 160) begin
+    		VGA_R = 0;
+    		VGA_G = 0;
+    		VGA_B = 8'hFF;
+    	end
+    	else if (col < 240) begin
+    		VGA_R = 0;
+    		VGA_G = 8'hFF;
+    		VGA_B = 0;
+    	end
+    	else if (col < 320) begin
+    		VGA_R = 0;
+    		VGA_G = 8'hFF;
+    		VGA_B = 8'hFF;
+    	end
+    	else if (col < 400) begin
+    		VGA_R = 8'hFF;
+    		VGA_G = 0;
+    		VGA_B = 0;
+    	end
+    	else if (col < 480) begin
+    		VGA_R = 8'hFF;
+    		VGA_G = 0;
+    		VGA_B = 8'hFF;
+    	end
+    	else if (col < 560) begin
+    		VGA_R = 8'hFF;
+    		VGA_G = 8'hFF;
+    		VGA_B = 0;
+    	end
+    	else if (col < 640) begin
+    		VGA_R = 8'hFF;
+    		VGA_G = 8'hFF;
+    		VGA_B = 8'hFF;
+    	end
+		if (VGA_BLANK) begin
+			VGA_R = 0;
+    		VGA_G = 0;
+    		VGA_B = 0;
+		end
+
+
+		
+		/*
+		if (row <120)begin
+			VGA_R = 0;
+    		VGA_G = 0;
+    		VGA_B = 0;
+		end
+		*/
+		/*
+		if(row < 60) begin
     		VGA_R = 0;
     		VGA_G = 0;
     		VGA_B = 0;
@@ -94,6 +166,8 @@ module ChipInterface
     		VGA_G = 8'hFF;
     		VGA_B = 8'hFF;
     	end
+		*/
+		
     end
     
     assign VGA_CLK = ~CLOCK_50;
@@ -101,7 +175,7 @@ module ChipInterface
     
     assign VGA_BLANK_N = ~VGA_BLANK;
 
-	vga v(.CLOCK_50(CLOCK_50), .reset(KEY[0]), .HS(VGA_HS), .VS(VGA_VS), .blank(VGA_BLANK), .row(row), .col(col));
+	vga v(.CLOCK_50(CLOCK_50), .reset(~KEY[0]), .HS(VGA_HS), .VS(VGA_VS), .blank(VGA_BLANK), .row(row), .col(col));
 
 endmodule: ChipInterface
 
@@ -116,10 +190,8 @@ logic [9:0] col;
 vga dut(.*);
 
 initial begin
-	$monitor($time,
-			 " clock = %d blank = %b HS = %b, VS = %b, row = %d, col = %d", CLOCK_50, blank, HS, VS, row, col);
 			 
-	CLOCK_50 = 0;
+    CLOCK_50 = 0;
     reset = 1;
     reset <= 0;
     forever #5 CLOCK_50 = ~CLOCK_50;
@@ -128,12 +200,12 @@ end
 
 initial begin
 	
-	#1000000;
-	$display("done");
+	for(int i = 0; i < 1800000; i = i + 1) begin
+		@(posedge CLOCK_50);
+#5;
+	end
 	$finish;
 end
 
 endmodule: vga_test
-
-
 
