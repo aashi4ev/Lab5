@@ -163,14 +163,17 @@ endmodule : Decoder_test
 module Register
   #(parameter WIDTH=8)
   (input  logic [WIDTH-1:0] D,
-   input  logic             en, clear, clock,
+   input  logic             en, reset, 
+   input  logic [WIDTH-1:0] reset_value, 
+   input  logic clock,
    output logic [WIDTH-1:0] Q);
    
-  always_ff @(posedge clock)
-    if (en)
+  always_ff @(posedge clock, posedge reset)
+    
+    if(reset)
+      Q <= reset_value;
+    else if (en)
       Q <= D;
-    else if (clear)
-      Q <= 0;
       
 endmodule : Register
 
@@ -285,7 +288,7 @@ endmodule: range_check_test
 
 module Counter
 #(parameter WIDTH=8)
-(input logic clock, reset,
+(input logic clock, reset, enable,
  input logic [WIDTH-1:0] maxValue,
  output logic [WIDTH-1:0] value);
  
@@ -295,10 +298,11 @@ always_ff @(posedge clock, posedge reset)
 
   if (reset)
     value <= 0;
-  else if(max)
-   value <= 0;
-  else
-    value <= value + 1;
+  else if(enable)
+	if(max)
+    		value <= 0;
+	else
+		value <= value + 1;
     
 endmodule: Counter
 

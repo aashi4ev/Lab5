@@ -3,75 +3,39 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -2.924
-TNS   : -39.955
-
-Type  : Slow 1200mV 85C Model Setup 'vga:v|Counter:count1|value[0]'
-Slack : -1.877
-TNS   : -27.689
+Slack : -2.368
+TNS   : -88.363
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : -1.129
-TNS   : -6.303
-
-Type  : Slow 1200mV 85C Model Hold 'vga:v|Counter:count1|value[0]'
-Slack : -0.411
-TNS   : -2.110
+Slack : 0.424
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -33.840
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vga:v|Counter:count1|value[0]'
-Slack : -1.285
-TNS   : -30.840
+TNS   : -64.680
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -2.456
-TNS   : -32.886
-
-Type  : Slow 1200mV 0C Model Setup 'vga:v|Counter:count1|value[0]'
-Slack : -1.565
-TNS   : -22.446
+Slack : -2.106
+TNS   : -76.517
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -1.068
-TNS   : -6.399
-
-Type  : Slow 1200mV 0C Model Hold 'vga:v|Counter:count1|value[0]'
-Slack : -0.311
-TNS   : -1.376
+Slack : 0.384
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -33.840
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vga:v|Counter:count1|value[0]'
-Slack : -1.285
-TNS   : -30.840
+TNS   : -64.680
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -0.904
-TNS   : -7.753
-
-Type  : Fast 1200mV 0C Model Setup 'vga:v|Counter:count1|value[0]'
-Slack : -0.410
-TNS   : -2.280
+Slack : -0.591
+TNS   : -17.910
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : -0.611
-TNS   : -3.771
-
-Type  : Fast 1200mV 0C Model Hold 'vga:v|Counter:count1|value[0]'
-Slack : -0.215
-TNS   : -1.266
+Slack : 0.191
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -28.365
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vga:v|Counter:count1|value[0]'
-Slack : -1.000
-TNS   : -24.000
+TNS   : -54.685
 
 ------------------------------------------------------------

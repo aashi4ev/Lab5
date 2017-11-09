@@ -1,0 +1,28 @@
+{
+    "ObjArchives": [
+        {
+            "archive": "archive.66/_16983_archive_1.a",
+            "objects": [
+                [
+                    "amcQw_d.o",
+                    7336
+                ]
+            ],
+            "size": 7336
+        }
+    ],
+    "Modules": {
+        "...MASTER...": {},
+        "std": {},
+        "vga_test": {}
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "out": "amcQw_d.o",
+            "mod": "...MASTER...",
+            "mode": 4,
+            "bytes": 7336,
+            "archive": "archive.66/_16983_archive_1.a"
+        }
+    }
+}

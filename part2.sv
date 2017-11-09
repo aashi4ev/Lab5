@@ -12,31 +12,31 @@ module vga
 	logic [10:0] doubleCol;
 	logic CountCols;
 
-	always_ff @(posedge CLOCK_50, posedge reset) begin
+	/*always_ff @(posedge CLOCK_50, posedge reset) begin
 		if(reset)
 			CountCols <= 0;
 		else
 			CountCols <= HDisp;
 	end
-	
+	*/
 	assign hTrigger = (horizontalCounter == 0);
 	assign hEndTrigger = (horizontalCounter == 1599);
 	
 	assign rowIncrement = hEndTrigger & VDisp;
-	assign colIncrement = CLOCK_50 & HDisp & CountCols;
+	assign colIncrement = CLOCK_50 & HDisp; //& CountCols;
 	assign col = doubleCol[10:1];
 	
 	assign blank = ~(VDisp & HDisp);
 	
-	Counter #(12) count1(CLOCK_50, reset, 12'd1599, horizontalCounter),
-				  count2(hTrigger, reset, 12'd520, verticalCounter),
-				  count3(colIncrement, reset, 12'd1279, doubleCol),
-				  count4(rowIncrement, reset, 12'd479, row);
+	Counter #(12) count1(.clock(CLOCK_50), .reset(reset), .enable(1), .maxValue(12'd1599), .value(horizontalCounter)),
+				  count2(.enable(hTrigger), .reset(reset), .clock(CLOCK_50), .maxValue(12'd520), .value(verticalCounter)),
+				  count3(.enable(colIncrement), .clock(CLOCK_50), .reset(reset), .maxValue(12'd1279), .value(doubleCol)),
+				  count4(.enable(rowIncrement), .reset(reset), .maxValue(12'd479), .clock(CLOCK_50), .value(row));
 				  
 				 
 	range_check #(12)  rc1(horizontalCounter, 12'd192, 12'd1599, HS),
 					           rc2(verticalCounter, 12'd2, 12'd520, VS),
-					           rc3(horizontalCounter, 12'd289, 12'd1568, HDisp),
+					           rc3(horizontalCounter, 12'd288, 12'd1567, HDisp),
 					           rc4(verticalCounter, 12'd31, 12'd510, VDisp);
 					 
 
@@ -44,6 +44,7 @@ module vga
 	 
 endmodule: vga
 
+/*
 module ChipInterface 
   (input  logic CLOCK_50, 
    input  logic  [3:0] KEY, 
@@ -62,13 +63,6 @@ module ChipInterface
     	VGA_R = 0;
     	VGA_G = 0;
     	VGA_B = 0;
-		/*
-		if (col > 160 && col < 480) begin
-    		VGA_R = 8'hFF;
-    		VGA_G = 0;
-    		VGA_B = 0;
-		end
-		*/
 		
     	if(col < 80) begin
     		VGA_R = 0;
@@ -110,69 +104,21 @@ module ChipInterface
     		VGA_G = 8'hFF;
     		VGA_B = 8'hFF;
     	end
-		if (VGA_BLANK) begin
-			VGA_R = 0;
-    		VGA_G = 0;
-    		VGA_B = 0;
-		end
-
-
 		
-		/*
-		if (row <120)begin
+		
+		
+		if (row > 240)begin
 			VGA_R = 0;
     		VGA_G = 0;
     		VGA_B = 0;
 		end
-		*/
-		/*
-		if(row < 60) begin
-    		VGA_R = 0;
-    		VGA_G = 0;
-    		VGA_B = 0;
-    	end
-    	else if (row < 120) begin
-    		VGA_R = 0;
-    		VGA_G = 0;
-    		VGA_B = 8'hFF;
-    	end
-    	else if (row < 180) begin
-    		VGA_R = 0;
-    		VGA_G = 8'hFF;
-    		VGA_B = 0;
-    	end
-    	else if (row < 240) begin
-    		VGA_R = 0;
-    		VGA_G = 8'hFF;
-    		VGA_B = 8'hFF;
-    	end
-    	else if (row < 300) begin
-    		VGA_R = 8'hFF;
-    		VGA_G = 0;
-    		VGA_B = 0;
-    	end
-    	else if (row < 360) begin
-    		VGA_R = 8'hFF;
-    		VGA_G = 0;
-    		VGA_B = 8'hFF;
-    	end
-    	else if (row < 420) begin
-    		VGA_R = 8'hFF;
-    		VGA_G = 8'hFF;
-    		VGA_B = 0;
-    	end
-    	else if (row < 480) begin
-    		VGA_R = 8'hFF;
-    		VGA_G = 8'hFF;
-    		VGA_B = 8'hFF;
-    	end
-		*/
+		
 		
     end
     
     assign VGA_CLK = ~CLOCK_50;
-    assign VGA_SYNC_N = 1;
-    
+    assign VGA_SYNC_N = 0;
+    //assign VGA_BLANK_N = 0;
     assign VGA_BLANK_N = ~VGA_BLANK;
 
 	vga v(.CLOCK_50(CLOCK_50), .reset(~KEY[0]), .HS(VGA_HS), .VS(VGA_VS), .blank(VGA_BLANK), .row(row), .col(col));
@@ -200,7 +146,7 @@ end
 
 initial begin
 	
-	for(int i = 0; i < 1800000; i = i + 1) begin
+	for(int i = 0; i < 3600000; i = i + 1) begin
 		@(posedge CLOCK_50);
 #5;
 	end
@@ -209,3 +155,4 @@ end
 
 endmodule: vga_test
 
+*/
